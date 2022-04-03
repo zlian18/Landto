@@ -20,11 +20,12 @@ const users = require('./routes/users')
 // const dbUrl = process.env.DB_URL;
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/landto';
 const secret = process.env.SECRET || 'keyboard';
+const port = process.env.PORT || 3000;
 
 mongoose.connect(dbUrl);
 mongoose.connection.on('error', err => { logError(err) });
 mongoose.connection.once('open', () => {
-    console.log('CONNECTED')
+    console.log('MONGO CONNECTED')
 });
 
 const app = express();
@@ -40,8 +41,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(mongoSanitize());
-
-
 
 const store = new MongoStore({
     mongoUrl: dbUrl,
@@ -94,8 +93,8 @@ app.get('/', (req, res) => {
     res.render("home");
 })
 
-app.listen(3000, () => {
-    console.log("listening on port 3000");
+app.listen(port, () => {
+    console.log(`listening on port ${port}`);
 })
 
 // Error Handling
