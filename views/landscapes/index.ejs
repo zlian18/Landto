@@ -1,0 +1,39 @@
+<% layout('/layout/boilerplate') -%>
+
+<div class="container mt-5">
+<h1 class="text-left mb-4">Landscape Photos</h1>
+<p class="text-left w-50 mb-5 description">A landscape is part of the Earth’s surface that can be viewed at one time from one place. Share your best landscape photos here at Landto, when submitting, please provide at least one photo and a description so that we can better understand the context of the photo.</p>
+<div class="row mb-5">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+        <% for (let i = 0; i < landscapes.length; i++) { %> 
+            <% if ((i % 3) === 0) { %> 
+            <a href="/landscapes/<%= landscapes[i]._id %>" class="landscape d-flex align-items-end justify-content-center mb-4">
+                <img src="<%= landscapes[i].images[0].url %>" class="w-100 shadow rounded" alt="">
+                <p class="image-overlay position-absolute"><%=landscapes[i].title %></p>
+            </a>
+            <% } %> 
+        <% } %> 
+    </div>
+    <div class="col-lg-4">
+        <% for (let i = 0; i < landscapes.length; i++) { %> 
+            <% if ((i % 3) === 1) { %> 
+            <a href="/landscapes/<%= landscapes[i]._id %>" class="landscape d-flex align-items-end justify-content-center mb-4">
+                <img src="<%= landscapes[i].images[0].url %>" class="w-100 shadow rounded" alt="">
+                <p class="image-overlay position-absolute"><%=landscapes[i].title %></p>
+            </a>            
+            <% } %> 
+        <% } %> 
+    </div>
+    <div class="col-lg-4">
+        <% for (let i = 0; i < landscapes.length; i++) { %> 
+            <% if ((i % 3) === 2) { %> 
+            <a href="/landscapes/<%= landscapes[i]._id %>" class="landscape d-flex align-items-end justify-content-center mb-4">
+                <img src="<%= landscapes[i].images[0].url %>" class="w-100 shadow rounded" alt="">
+                <p class="image-overlay position-absolute"><%=landscapes[i].title %></p>
+            </a>
+            <% } %> 
+        <% } %> 
+    </div>
+</div>
+</div>
+

@@ -1,0 +1,44 @@
+body {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.container {
+    max-width: 60vw;
+}
+
+.landto .nav-link {
+    color: white;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-size: 1.15rem;
+    padding: 0;
+    margin-left: 1.25em;
+    margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid transparent;
+
+}
+
+.nav-container .nav-link:hover {
+    color: rgba(255, 255, 255, 0.5);
+    border-bottom: 2px solid;
+}
+
+main {
+    position: inline-block;
+    min-height: 80vh;
+}
+
+h1 {
+    color: white;
+    font-weight: 700;
+}
+
+p {
+    color: rgba(255, 255, 255, 0.795);
+}

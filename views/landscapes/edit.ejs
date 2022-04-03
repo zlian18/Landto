@@ -1,0 +1,44 @@
+<% layout('/layout/boilerplate') -%>
+
+<div class="edit-bg d-flex justify-content-center">
+    <div class="edit-form mb-5 my-auto w-50">
+        <h2 class="text-center">Edit Landscape</h2>
+        <form action="/landscapes/<%= landscape._id %>?_method=PUT" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="title" name="landscape[title]"
+                    value="<%= landscape.title %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location:</label>
+                <input type="text" class="form-control" id="location" name="landscape[location]"
+                    value="<%= landscape.location %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="formFileMultiple" class="form-label">Add Images</label>
+                <input class="form-control" type="file" id="formFileMultiple" name="images" multiple>
+            </div> 
+            <div class="mb-3">
+                <label for="description" class="form-label">Description:</label>
+                <textarea type="text" class="form-control" id="description"
+                    name="landscape[description]" required><%= landscape.description %></textarea>
+            </div>
+            <p>Select Images to Delete:</p>
+            <div class="mb-3 text-center">
+                
+                <% landscape.images.forEach((img, i) => { %> 
+                <div class="form-check form-check-inline mb-2">
+                    <label for="img-thumb-<%=i%>" class="form-check-label">
+                        <img src="<%= img.url %>" alt="" class="cursor-pointer" width="250px">
+                    </label>
+                    <input type="checkbox" class="form-check-input position-absolute" id="img-thumb-<%=i%>" name="deleteImages[]" value="<%= img.key %>">
+                </div>
+                <% }) %> 
+            </div>
+            <div class="d-flex justify-content-between">
+                <button class="btn btn-success">Submit</button>
+                <a href="/landscapes/<%= landscape._id %>" class="btn btn-light">Back</a>
+            </div>
+        </form>
+    </div>
+</div>

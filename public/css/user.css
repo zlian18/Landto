@@ -1,0 +1,73 @@
+/** login/register page **/
+body {
+    background-color:#f6f5f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#home {
+    position: absolute;
+    margin-top: 10px;
+    width:60%;
+    text-align: end;
+}
+
+.user-container {
+    height: 60vh;
+    width: 60%;
+	background-color: #fff;
+	border-radius: 15px;
+    box-shadow: 3px 10px 8px #888888;
+}   
+
+.left {
+    min-height:  100%; 
+    position:  relative; 
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+    background-image: url('../login_img.jpg');
+}
+
+.right {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;    
+}
+
+.submit-btn{
+    width: auto;
+    min-width: 100px;
+    border-radius: 24px; 
+    text-align: center; 
+    padding: 10px 30px;
+    background-color: #FF5733;
+    color: #fff; 
+    font-size: 14px;
+    font-weight: 500; 
+    box-shadow: 0px 2px 6px -1px rgba(0,0,0,.13); 
+    border: none;
+    transition: all .3s ease; 
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 2px 6px -1px #FF5733;
+}
+
+.submit-btn:active {
+    transform: scale(.99);
+}
+
+a {
+    margin-top: 1.5em;
+    text-decoration: none;
+    color: grey;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: grey;
+}

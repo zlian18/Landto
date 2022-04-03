@@ -1,0 +1,13 @@
+body{
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../background.jpg');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+.new-form {
+    padding: 3em;
+    background-color: #fff;
+	border-radius: 15px;
+    box-shadow: 3px 10px 8px #888888;
+}
