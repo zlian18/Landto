@@ -16,7 +16,7 @@ const s3 = new aws.S3({
   secretAccessKey,
   region
 })
-// TODO: Filter image size and total number image for each landscape
+// TODO: Filter image size and total number image for each landscape.
 const fileFilter = (req, file, cb) => {
   if (file.mimetype !== 'image/jpg' && file.mimetype !== 'image/jpeg' && file.mimetype !== 'image/png') {
     return cb(new ExpressError('Incorrect image format', 404), false);
