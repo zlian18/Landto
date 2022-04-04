@@ -6,40 +6,27 @@ h1 {
     font-size: 3.5em;
     font-weight: bold;
 }
-.form-check-label:hover, .form-check-input:hover {
+
+.form-check-label:hover,
+.form-check-input:hover {
     cursor: pointer;
 }
 
 p {
-    font-size: 1.1em;
+    font-size: 1.1rem;
 }
 
 p span {
-    font-size: 1.3em;
+    font-size: 1.3rem;
 }
 
-
-/* edit page */
-.edit-bg {
-    padding-top: 2em;
-    background-color:#f6f5f7;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0,0,0,0.2)), url('../background.jpg');
-    background-size: cover;
-    background-position: center;
-
-}
-.edit-form {
-    padding: 3em;
-    background-color: #fff;
-	border-radius: 15px;
-    box-shadow: 3px 10px 8px #888888;
-}
 /* index page */
 .image-overlay {
     display: none;
 }
 
-.landscape img:hover+.image-overlay, .image-overlay:hover {
+.landscape img:hover+.image-overlay,
+.image-overlay:hover {
     display: block;
     color: rgba(255, 255, 255, 0.781);
 }
@@ -50,5 +37,22 @@ p span {
 }
 
 .description {
+    width: 50%;
     font-size: 1.1em;
+}
+
+@media (max-width: 991.98px) {
+    .description {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575.98px) {
+    h1 {
+        font-size: 2.2em
+    }
+
+    .description {
+        font-size: 0.9em;
+    }
 }

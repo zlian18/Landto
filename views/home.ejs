@@ -13,30 +13,53 @@
 </head>
 
 <body>
-    <header class="container">
-        <div class="d-flex">
+    <nav class="mx-5 navbar navbar-expand-md navbar-dark d-flex">
+        <div class="container-fluid px-0">
             <div class="landto">
                 <a href="/" class="nav-link">Landto</a>
             </div>
-            <div class="nav-container ms-auto d-flex">
-                <a href="/landscapes" class="nav-link">Landscapes</a>
-                <% if(!currentUser) { %>
-                <a href="/login" class="nav-link">Login</a>
-                <a href="/register" class="nav-link">Register</a>
-                <% } else { %>
-                <a href="/landscapes/new" class="nav-link">Upload Photos</a>
-                <a href="/logout" class="nav-link">Logout</a>
-                <% } %>
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="nav-container collapse navbar-collapse ms-auto" id="navbarNav">
+                <div class="me-auto"></div>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="/landscapes" class="nav-link">Landscapes</a>
+                    </li>
+                    <% if(!currentUser) { %>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/register" class="nav-link">Register</a>
+                    </li>
+                    <% } else { %>
+                    <li class="nav-item">
+                        <a href="/landscapes/new" class="nav-link">Upload Photos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/logout" class="nav-link">Logout</a>
+                    </li>
+                    <% } %>
+                </ul>
             </div>
         </div>
-        <main class="d-flex flex-column justify-content-center align-items-center text-center">
-            <h1>Visions of Earth</h1>
-            <p>A landscape is part of the Earth’s surface that can be viewed at one time from one place. Share your best
-                landscape photos here at Landto, when submitting, please provide at least one photo and a description so
-                that we can better understand the context of the photo.</p>
-            <a href="/landscapes" class="btn btn-dark">Explore</a>
-        </main>
-    </header>
+    </nav>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <main class="d-flex flex-column justify-content-center align-items-center text-center">
+                <h1>Visions of Earth</h1>
+                <p>A landscape is part of the Earth’s surface that can be viewed at one time from one place. Share your
+                    best
+                    landscape photos here at Landto, when submitting, please provide at least one photo and a
+                    description so
+                    that we can better understand the context of the photo.</p>
+                <a href="/landscapes" class="btn btn-dark">Explore</a>
+            </main>
+        </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous">
